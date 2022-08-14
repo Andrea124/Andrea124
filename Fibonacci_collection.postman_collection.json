@@ -1,0 +1,85 @@
+{
+	"info": {
+		"_postman_id": "eb4141cb-0d70-4416-8c2e-b32127b595df",
+		"name": "Fibonacci_collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET Fibonacci",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:4000/fibonacci/36",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "4000",
+					"path": [
+						"fibonacci",
+						"36"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE number",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:4000/fibonacci/3",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "4000",
+					"path": [
+						"fibonacci",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET valid_numbers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:4000/valid_numbers",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "4000",
+					"path": [
+						"valid_numbers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Health check",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
