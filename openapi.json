@@ -1,0 +1,167 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Swagger Service -Fibonacci 1.0",
+    "description": "This project is especialy for test and show the fibonacci serie",
+    "contact": {
+      "email": "m.andrea.bc.124@gmail.com"
+    },
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://localhost:4000"
+    }
+  ],
+  "tags": [
+    {
+      "name": "fibonacci"
+    }
+  ],
+  "paths": {
+    "/fibonacci/{limit_number}": {
+      "get": {
+        "tags": [
+          "fibonacci"
+        ],
+        "summary": "Get Fibonacci Serie",
+        "description": "Get Fibonacci Serie with a limit number",
+        "operationId": "addNumber",
+        "parameters": [
+          {
+            "name": "limit_number",
+            "in": "path",
+            "description": "limit number of serie",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/fibonacci"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Error with service"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "fibonacci"
+        ],
+        "summary": "Deletes a pet",
+        "description": "delete a pet",
+        "operationId": "deleteNumber",
+        "parameters": [
+          {
+            "name": "limit_number",
+            "in": "path",
+            "description": "limit number of serie",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/fibonacci_delete"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Error with service"
+          }
+        }
+      }
+    },
+    "/valid_numbers": {
+      "get": {
+        "tags": [
+          "fibonacci"
+        ],
+        "summary": "Get valid_numbers",
+        "description": "Get all numbers entered",
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/valid_numbers"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Error with service"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "fibonacci": {
+        "type": "object",
+        "properties": {
+          "fibonacci_serie": {
+            "example": [
+              1,
+              2,
+              3,
+              5,
+              8,
+              13,
+              21,
+              34,
+              55,
+              89
+            ]
+          }
+        }
+      },
+      "fibonacci_delete": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string",
+            "example": "Action success"
+          }
+        }
+      },
+      "valid_numbers": {
+        "type": "object",
+        "properties": {
+          "valid_numbers": {
+            "example": [
+              5,
+              3,
+              1,
+              100
+            ]
+          }
+        }
+      }
+    }
+  }
+}
